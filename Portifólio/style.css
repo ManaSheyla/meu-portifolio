@@ -1,0 +1,804 @@
+/* =========================================
+   📱 RESPONSIVIDADE (Celulares e Tablets)
+ /* --- CONFIGURAÇÕES GERAIS --- */
+:root {
+    /* Cores exatas do seu print */
+    --fundo-gradiente: linear-gradient(135deg, #fdf0f7 0%, #eef1fb 50%, #e3f8f9 100%);
+    --texto-primario: #3b3f46;
+    --texto-secundario: #6b7280;
+    --azul-titulo: #5ab2ff;
+    --verde-titulo: #4ade80;
+    --gradiente-botao: linear-gradient(90deg, #ff66c4, #b967ff);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+    color: var(--texto-primario);
+    background: var(--fundo-gradiente);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.escondido {
+    display: none !important;
+}
+
+/* --- TELA INICIAL --- */
+#tela-inicial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Detalhe da estrelinha no canto esquerdo */
+.estrela-decorativa {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: #ff66c4;
+}
+
+/* A pílula branca no topo */
+.badge-topo {
+    background: white;
+    color: var(--texto-primario);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- TEXTOS E TÍTULOS --- */
+.titulo-principal {
+    font-family: 'Fredoka', sans-serif; /* Fonte arredondada igual do print */
+    font-size: 4.5rem;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+/* O efeito 3D puff no texto The Eyshila */
+.texto-azul {
+    color: var(--azul-titulo);
+    text-shadow: 0px 4px 0px #3a8cd9, 0px 10px 20px rgba(90, 178, 255, 0.3);
+}
+
+.texto-verde {
+    color: var(--verde-titulo);
+    text-shadow: 0px 4px 0px #2ea65a, 0px 10px 20px rgba(74, 222, 128, 0.3);
+}
+
+.subtitulo-escuro {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px 0 20px 0;
+    color: #444751;
+}
+
+.texto-descricao {
+    color: var(--texto-secundario);
+    font-size: 1.1rem;
+    max-width: 650px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* --- BOTÃO ENTER THE WORLD --- */
+#btn-iniciar {
+    background: var(--gradiente-botao);
+    color: white;
+    border: none;
+    padding: 16px 45px;
+    border-radius: 40px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(185, 103, 255, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Nunito', sans-serif;
+}
+
+#btn-iniciar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(185, 103, 255, 0.5);
+}
+
+/* --- CARDS INFERIORES --- */
+.cards-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.card {
+    background: white;
+    padding: 25px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 140px;
+}
+
+.card h3 {
+    margin: 15px 0 0 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/* Ícones quadradinhos coloridos dentro dos cards */
+.icone-box {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.bg-rosa { background: #ff6bc9; }
+.bg-azul { background: #4ec2fc; }
+.bg-verde { background: #b0f252; color: #333; } /* Verde claro com estrela mais escura */
+
+/* --- RESPONSIVIDADE (Para Celular) --- */
+@media (max-width: 768px) {
+    .titulo-principal { font-size: 3rem; }
+    .subtitulo-escuro { font-size: 1.5rem; }
+    .texto-descricao { font-size: 1rem; padding: 0 20px; }
+    .cards-container { flex-direction: column; width: 100%; max-width: 300px; }
+    .card { flex-direction: row; gap: 20px; padding: 15px 25px; align-items: center; }
+    .card h3 { margin: 0; }
+}
+
+/* ================= MAPA DO JOGO ================= */
+#container-jogo {
+    background-color: #e6f2f8; /* Fundo azul claro atrás do mapa */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.top-bar {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 50;
+}
+
+#btn-voltar {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.aviso-mapa {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+#area-mapa {
+    width: 90%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+#mapa {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* MUDE AQUI PARA O NOME DA SUA IMAGEM DO MAPA */
+    background-image: url('Imagens/cenario.png'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* Áreas clicáveis invisíveis */
+.predio {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-radius: 50%;
+    /* Descomente a linha abaixo se quiser ver as caixas clicáveis para ajustar */
+    /* background-color: rgba(255, 0, 0, 0.4); */
+}
+
+/* MUDE AQUI PARA O NOME DA SUA PERSONAGEM */
+#personagem {
+    position: absolute;
+    width: 60px;
+    height: 90px;
+    background-image: url('Imagens/boneca.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -100%);
+    z-index: 10;
+    /* A mágica do voo suave acontece aqui: */
+    transition: left 1.5s ease-in-out, top 1.5s ease-in-out; 
+}
+
+/* ================= MODAL ================= */
+#modal-info {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center; z-index: 100;
+}
+
+.modal-conteudo {
+    background: white; width: 450px; border-radius: 25px;
+    overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.modal-cabecalho {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 25px; border-bottom: 1px solid #f0f0f0;
+}
+.modal-cabecalho h3 { margin: 0; font-weight: 800; font-size: 1.2rem; }
+#btn-fechar { background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #333; }
+
+.modal-corpo { padding: 25px; max-height: 60vh; overflow-y: auto; }
+
+.secao-titulo { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
+.icone-verde-quadrado { background: #b0f252; width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 12px; font-size: 1.2rem; }
+.secao-titulo h2 { margin: 0; font-weight: 800; font-size: 1.4rem; }
+
+.subtitulo-secao { margin: 20px 0 15px 0; font-size: 1.1rem; }
+
+.card-info { background: #fdfdfd; border: 1px solid #eefbc7; padding: 20px; border-radius: 15px; margin-bottom: 15px; }
+.legenda-cinza { color: #888; font-size: 0.85rem; margin: 5px 0 10px 0; }
+.card-info p { margin: 0; font-size: 0.95rem; color: #555; line-height: 1.5; }
+
+.badge-certificacao { padding: 15px; border-radius: 12px; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600; color: #444; }
+.badge-azul { background: #eaf8ff; border: 1px solid #bce6ff; }
+.badge-azul-claro { background: #f0f9ff; border: 1px solid #d4eeff; }
+
+.borda-colorida-base { height: 6px; background: linear-gradient(90deg, #ff6bc9, #4ec2fc, #b0f252); }
+
+/* ================= BARRA DO TOPO ================= */
+.top-bar {
+    position: absolute; 
+    top: 30px; /* Distância do topo da tela */
+    left: 0; /* Garante que comece colado no lado esquerdo */
+    width: 100%; /* Estica para ocupar 100% da largura da tela */
+    padding: 0 50px; /* Dá um respiro de 50px nas laterais */
+    display: flex;
+    justify-content: space-between; /* Mágica: empurra a casinha pra esquerda e o aviso pra direita */
+    align-items: center; /* Centraliza eles verticalmente */
+    box-sizing: border-box; /* Evita que o padding quebre a largura */
+    z-index: 100; /* Garante que fique por cima de tudo */
+}
+
+#btn-voltar {
+    background: white;
+    border: none;
+    border-radius: 15px;
+    width: 55px; /* Deixei um pouquinho maior pra ficar mais bonito */
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    /* Estas três linhas abaixo centralizam o emoji perfeitamente dentro do botão */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+#btn-voltar:hover {
+    transform: scale(1.05); /* Dá um efeitinho legal ao passar o mouse */
+}
+
+.aviso-mapa {
+    background: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #555;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    /* Alinha o ícone e o texto perfeitamente */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Dá um espacinho entre o alfinete e o texto */
+}
+
+/* ================= MÚSICA E ANIMAÇÕES DA TELA INICIAL ================= */
+
+/* Botão da Música no canto superior direito */
+#btn-musica {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    background: white;
+    color: var(--texto-primario);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Fica acima de tudo na tela */
+    transition: transform 0.3s, color 0.3s;
+}
+
+#btn-musica:hover {
+    transform: scale(1.1);
+    color: #ff6bc9;
+}
+
+/* Transformando o Título Principal para poder encolher */
+.titulo-principal {
+    transition: transform 0.4s ease-in-out, margin 0.4s ease-in-out;
+    position: sticky; /* Faz ele grudar na tela ao rolar */
+    top: 20px; /* Gruda a 20px do topo */
+    z-index: 50;
+    transform-origin: center top; /* Ele encolhe em direção ao centro-topo */
+}
+
+/* Essa classe o JavaScript vai colocar quando rolar a tela pra baixo */
+.titulo-encolhido {
+    transform: scale(0.5); /* Diminui para 50% do tamanho */
+    margin-bottom: 0px;
+}
+
+/* ================= EFEITOS CARTOON DA TELA INICIAL ================= */
+
+/* --- 1. Efeito Bouncy (Mola) nos Cards --- */
+.card {
+    /* Mantenha o que já tem na sua classe .card e adicione/atualize esta linha: */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.card:hover {
+    animation: puloCartoon 0.5s ease;
+    transform: translateY(-15px); /* Levanta o card */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes puloCartoon {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-20px) scaleY(1.1) scaleX(0.9); } /* Estica pra cima */
+    60% { transform: translateY(-10px) scaleY(0.95) scaleX(1.05); } /* Amassa um pouco */
+    80% { transform: translateY(-17px) scaleY(1.02) scaleX(0.98); }
+    100% { transform: translateY(-15px) scale(1); }
+}
+
+/* --- 2. Boneca do Scroll (Voa pra cima ao descer a tela) --- */
+#boneca-scroll {
+    position: absolute;
+    bottom: 50px;
+    right: 15%; /* Fica no canto direito da tela inicial */
+    width: 90px;
+    height: 130px;
+    /* COLOQUE AQUI A IMAGEM DELA NA POSE DE VOO (Subindo) */
+    background-image: url('Imagens/boneca1.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    transition: transform 0.1s ease-out; /* Deixa o movimento do scroll suave */
+}
+
+/* --- 3. Boneca do Voo Rasante (Cruza a tela a cada 12s) --- */
+#boneca-voo-rasante {
+    position: absolute;
+    top: 25%;
+    left: -200px; /* Começa escondida fora da tela na esquerda */
+    width: 110px;
+    height: 70px;
+    /* COLOQUE AQUI A IMAGEM DELA DEITADA VOANDO PARA A DIREITA */
+    background-image: url('Imagens/boneca2.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 100;
+    pointer-events: none; /* Não atrapalha o clique em outras coisas */
+    
+    /* Cria um "rastro" de energia rosa e azul atrás dela usando sombra */
+    filter: drop-shadow(-20px 5px 0px rgba(255, 107, 201, 0.6)) drop-shadow(-40px 10px 0px rgba(78, 194, 252, 0.4));
+    
+    /* Executa a animação a cada 12 segundos */
+    animation: vooHeroina 28s linear infinite;
+}
+
+@keyframes vooHeroina {
+    0% { left: -200px; transform: translateY(0) rotate(5deg); }
+    /* Ela cruza a tela toda nos primeiros 2 segundos (15% de 12s) */
+    15% { left: 110vw; transform: translateY(-50px) rotate(-5deg); } 
+    /* Fica escondida lá na direita o resto do tempo até recomeçar */
+    100% { left: 110vw; } 
+}
+
+/* ================= NUVENS ANIMADAS ================= */
+
+.nuvem {
+    position: absolute;
+    font-size: 40px; /* Tamanho do emoji ou imagem */
+    opacity: 0.7;    /* Deixa levemente transparente */
+    z-index: 5;      /* Fica acima do gramado, mas abaixo dos prédios se quiser */
+    pointer-events: none; /* Garante que você consiga clicar nos prédios mesmo se a nuvem estiver em cima */
+}
+
+/* ================= TÍTULO DA TELA INICIAL ================= */
+
+#imagem-titulo {
+    width: 100%;
+    max-width: 500px; /* Você pode aumentar ou diminuir esse número para ajustar o tamanho do título na tela */
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem */
+    
+    /* Esta linha chama a animação 'entradaCartoon' que dura 0.8 segundos */
+    /* O 'cubic-bezier' é o segredo matemático que faz o título quicar como uma mola! */
+    animation: entradaCartoon 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Os quadros (frames) da animação do título */
+@keyframes entradaCartoon {
+    0% {
+        transform: scale(4); /* Começa GIGANTE (4x o tamanho) vindo na cara do usuário */
+        opacity: 0; /* Começa invisível */
+    }
+    40% {
+        opacity: 1; /* Fica 100% visível no meio do caminho */
+    }
+    70% {
+        transform: scale(0.9); /* Encolhe um pouquinho mais que o normal para dar o impacto */
+    }
+    100% {
+        transform: scale(1); /* Pousa suavemente no tamanho real e fica lá */
+    }
+}
+
+/* ================= CARROSSEL DE PROJETOS ================= */
+.secao-projetos {
+    margin-top: 60px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.titulo-projetos {
+    font-size: 1.8rem;
+    color: #ff6bc9;
+    margin-bottom: 25px;
+    font-weight: 800;
+    text-shadow: 2px 2px 0px white; /* Sombrinha estilo cartoon */
+}
+
+/* O container que desliza */
+.carrossel-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Faz o card "encaixar" no meio certinho ao rolar */
+    max-width: 900px; /* Largura máxima do carrossel na tela */
+    margin: 0 auto;
+    
+    /* Esconde a barra de rolagem para ficar mais estético */
+    scrollbar-width: none; 
+}
+
+.carrossel-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* O visual de cada Projeto */
+.projeto-card {
+    min-width: 260px;
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    scroll-snap-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border: 2px solid transparent;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s;
+    cursor: pointer;
+}
+
+.projeto-card:hover {
+    transform: translateY(-15px); /* Dá o pulinho pra cima */
+    border-color: #ff6bc9; /* Borda rosa ao passar o mouse */
+}
+
+.projeto-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Corta a imagem bonitinho para caber no quadrado */
+    border-radius: 15px;
+    margin-bottom: 15px;
+    background-color: #e6f2f8; /* Cor de fundo caso a imagem demore a carregar */
+}
+
+.projeto-card h3 {
+    margin: 0 0 5px 0;
+    color: #4ec2fc; /* Azul combinando com a identidade */
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.projeto-card p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* ================= CARROSSEL DE PROJETOS (ESTILO INSTAGRAM) ================= */
+.secao-projetos {
+    margin-top: 60px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+.titulo-projetos {
+    font-size: 1.8rem;
+    color: #ff6bc9;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+/* O quadrado principal do carrossel */
+.instagram-wrapper {
+    max-width: 400px; /* Tamanho de celular, igual ao Insta */
+    margin: 0 auto;
+    position: relative;
+}
+
+.carrossel-insta {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; /* Esconde a barra no Firefox */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    background: white;
+}
+
+.carrossel-insta::-webkit-scrollbar {
+    display: none; /* Esconde a barra no Chrome/Edge */
+}
+
+.insta-card {
+    flex: 0 0 100%; /* Cada card ocupa 100% do espaço, forçando um por vez */
+    scroll-snap-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.insta-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Deixa a imagem um quadrado perfeito (estilo post original do Insta) */
+    object-fit: cover;
+    background-color: #e6f2f8;
+}
+
+.insta-legenda {
+    padding: 20px;
+    text-align: left;
+    background: white;
+}
+
+.insta-legenda h3 {
+    margin: 0 0 5px 0;
+    color: #4ec2fc;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.insta-legenda p {
+    margin: 0;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* As bolinhas (Dots) */
+.insta-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #d1d5db; /* Bolinha cinza apagada */
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot.ativa {
+    background-color: #ff6bc9; /* Bolinha rosa quando está na foto atual */
+    transform: scale(1.3); /* Fica um pouquinho maior */
+}
+
+/* ================= CURSOR MÁGICO E RASTRO ================= */
+body {
+    /* Troca a setinha chata por uma estrela brilhante! */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">✨</text></svg>'), auto;
+}
+
+.rastro-estrela {
+    position: absolute;
+    pointer-events: none;
+    font-size: 16px;
+    animation: sumirRastro 0.8s forwards;
+    z-index: 9999;
+}
+
+@keyframes sumirRastro {
+    0% { opacity: 1; transform: scale(1) translateY(0); }
+    100% { opacity: 0; transform: scale(0.3) translateY(20px); }
+}
+
+/* ================= TELA DE CARREGAMENTO ================= */
+#tela-carregamento {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: linear-gradient(135deg, #ffe6f2, #e6f2f8);
+    z-index: 10000; /* Isso garante que ela fique por cima de tudo! */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.loader-conteudo { 
+    text-align: center; 
+}
+
+.caldeirao {
+    font-size: 70px;
+    animation: puloCaldeirao 1s infinite alternate cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.texto-carregando { 
+    color: #ff6bc9; 
+    font-size: 1.5rem; 
+    margin-top: 20px; 
+    font-weight: 800;
+}
+
+.barra-fundo {
+    width: 250px; 
+    height: 15px; 
+    background: white;
+    border-radius: 10px; 
+    margin: 20px auto; 
+    overflow: hidden;
+    border: 2px solid #ff6bc9;
+}
+
+.barra-progresso {
+    width: 0%; 
+    height: 100%; 
+    background: #4ec2fc;
+    animation: encherBarra 2s ease forwards;
+}
+
+@keyframes puloCaldeirao { 
+    from { transform: translateY(0); } 
+    to { transform: translateY(-20px); } 
+}
+@keyframes encherBarra { 
+    to { width: 100%; } 
+}
+/* ================= BOLHAS DE SKILLS ================= */
+.secao-skills { text-align: center; margin-bottom: 60px; }
+
+.bolhas-container {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;
+    max-width: 600px; margin: 0 auto; padding: 20px;
+}
+
+.bolha {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: #4ec2fc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: flutuarBolha 3s infinite ease-in-out alternate;
+}
+
+.bolha:hover { transform: scale(1.1) translateY(-10px); color: #ff6bc9; border-color: #ff6bc9; }
+
+/* Atrasos diferentes para cada bolha não flutuar junto igual robô */
+.b1 { animation-delay: 0s; } .b2 { animation-delay: 0.3s; }
+.b3 { animation-delay: 0.6s; } .b4 { animation-delay: 0.9s; } .b5 { animation-delay: 1.2s; }
+
+@keyframes flutuarBolha { from { transform: translateY(0px); } to { transform: translateY(-12px); } }
+
+/* Organização da Tela Inicial */
+#tela-inicial {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    min-height: 100vh;      /* Ocupa pelo menos a altura inteira da tela */
+    text-align: center;
+}
+
+.conteudo-central {
+    display: flex;
+    flex-direction: column; /* Organiza os blocos em coluna (um embaixo do outro) */
+    align-items: center;    /* Centraliza os itens dentro da coluna */
+    gap: 20px;              /* Espaçamento entre os blocos */
+    max-width: 800px;       /* Largura máxima para não ficar muito espalhado */
+    padding: 20px;
+}
+
+/* Organização dos Cards */
+.cards-container {
+    display: flex;          /* Ativa o Flexbox para alinhar os cards lado a lado */
+    justify-content: center; /* Centraliza os cards horizontalmente */
+    gap: 20px;              /* Espaçamento entre cada card */
+    margin-top: 30px;
+    width: 100%;
+}
+
+.card {
+    /* Estilos básicos para o card, ajuste conforme necessário */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1;                /* Faz com que todos os cards tenham a mesma largura */
+    max-width: 200px;       /* Define uma largura máxima para cada card */
+}
+
+/* Configuração de cada nuvem */
+.nuvem-1 { top: 10%; animation: moverNuvem 30s linear infinite; }
+.nuvem-2 { top: 25%; animation: moverNuvem 45s linear infinite reverse; font-size: 70px; }
+.nuvem-3 { top: 45%; animation: moverNuvem 35s linear infinite; animation-delay: 5s; }
+.nuvem-4 { top: 70%; animation: moverNuvem 40s linear infinite; }
+
+/* Animação de movimento lateral */
+@keyframes moverNuvem {
+    0% { left: -15%; }
+    100% { left: 110%; }
+}

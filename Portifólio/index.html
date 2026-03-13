@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eyshila | Systems Development Analyst</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="tela-carregamento">
+        <div class="loader-conteudo">
+            <div class="caldeirao">🧪</div>
+            <h2 class="texto-carregando" id="texto-carregando">Misturando código, café e o Elemento X...</h2>
+            <div class="barra-fundo">
+                <div class="barra-progresso" id="barra-carregamento"></div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="musica-fundo" loop>
+        <source src="Imagens/meninaspoderosas.mp3" type="audio/mpeg">
+    </audio>
+    <button id="btn-musica">🔇 Music: OFF</button>
+
+
+    <div id="tela-inicial">
+        <div class="badge-topo">✨ Welcome to my world</div>
+
+        <div id="boneca-scroll"></div>
+        <div id="boneca-voo-rasante"></div>
+        
+        <div class="conteudo-principal-home">
+            <div class="titulo-principal">
+                <img src="Imagens/titulo.png" alt="The Systems Development Analyst Eyshila" id="imagem-titulo">
+            </div>
+            
+            <h2 class="subtitulo-escuro">My Portfolio</h2>
+
+            <p class="texto-descricao">
+                Step into an interactive portfolio experience where creativity meets technology. Explore my projects, skills, and journey through a playful isometric world.
+            </p>
+            
+            <button id="btn-iniciar">Enter the world ➔</button>
+            
+            <div class="cards-container">
+                <div class="card">
+                    <div class="icone-box bg-rosa">✨</div>
+                    <h3>Interactive</h3>
+                </div>
+                <div class="card">
+                    <div class="icone-box bg-azul">🤍</div>
+                    <h3>Creative</h3>
+                </div>
+                <div class="card">
+                    <div class="icone-box bg-verde">⚡</div>
+                    <h3>Dynamic</h3>
+                </div>
+            </div>
+
+            <div class="secao-projetos">
+                <h2 class="titulo-projetos">✨ My Projects ✨</h2>
+                <div class="instagram-wrapper">
+                    <div class="carrossel-insta" id="meu-carrossel">
+                        <div class="insta-card">
+                            <img src="projeto1.jpg" alt="Projeto 1">
+                            <div class="insta-legenda"><h3>Project Title</h3><p>Description here</p></div>
+                        </div>
+                        <div class="insta-card">
+                            <img src="projeto2.jpg" alt="Projeto 2">
+                            <div class="insta-legenda"><h3>Project Title</h3><p>Description here</p></div>
+                        </div>
+                    </div>
+                    <div class="insta-dots">
+                        <span class="dot ativa"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="secao-skills">
+                <h2 class="titulo-projetos">🫧 My Superpowers 🫧</h2>
+                <div class="bolhas-container">
+                    <div class="bolha b1">Power BI</div>
+                    <div class="bolha b2">Python</div>
+                    <div class="bolha b3">C++</div>
+                    <div class="bolha b4">DAX</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="container-jogo" class="escondido">
+        <div class="top-bar">
+            <button id="btn-voltar">🏠</button>
+            <div class="aviso-mapa">📍 Tap buildings to explore</div>
+        </div>
+
+        <div id="area-mapa">
+            <div id="mapa">
+                <div class="nuvem nuvem-1">☁️</div>
+                <div class="nuvem nuvem-2">☁️</div>
+                <div class="nuvem nuvem-3">☁️</div>
+                <div class="nuvem nuvem-4">☁️</div>
+                <div class="predio" id="casa-rosa" style="top:50%; left:45%;">
+                    <div class="marcador-click"></div>
+                </div>
+                <div class="predio" id="laboratorio" style="top: 35%; left: 63%;">
+                    <div class="marcador-click"></div>
+                </div>
+                <div class="predio" id="escola" style="top: 40%; left: 85%;">
+                    <div class="marcador-click"></div>
+                </div>
+
+                <div id="personagem" style="top: 68%; left: 12%;"></div>
+            </div>  
+        </div>
+    </div>
+
+
+    <div id="modal-info" class="escondido">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <h3 id="modal-titulo-topo">Details</h3>
+                <button id="btn-fechar">✕</button>
+            </div>
+            <div class="modal-corpo">
+                <p>Aqui aparecerão as informações do prédio clicado!</p>
+            </div>
+            <div class="borda-colorida-base"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
